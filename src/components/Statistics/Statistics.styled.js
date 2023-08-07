@@ -12,14 +12,14 @@ export const StatisticsSection = styled.section`
   background-color: #fff;
   border-radius: 5px;
   width: 400px;
-  
-  h2 {
-    font-size: 24px;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: gray;
-    text-align: center;
-  }
+`;
+
+export const Title = styled.h2`
+font-size: 24px;
+font-weight: 600;
+text-transform: uppercase;
+color: gray;
+text-align: center;
 `;
 
 export const StatisticsLi = styled(StatListItem)`

@@ -1,28 +1,28 @@
 import { PropTypes } from 'prop-types';
 import { StatisticsSection } from './Statistics.styled';
 import { StatList } from 'components/common/List/List.styled';
-import { StatisticsLi } from './Statistics.styled';
+import { StatisticsLi, Title} from './Statistics.styled';
 
-export const Statistics = ({ data }) => {
+export const Statistics = ({title, stats}) => {
   return (
     <StatisticsSection>
-      <h2>Upload stats</h2>
+      {title && <Title className="title">{title}</Title>}
       <StatList>
-        {data.map(({ id, label, percentage }) => {
-          return (
-            <StatisticsLi key={id} label={label} info={percentage + '%'} />
-          );
-        })}
+        {stats.map(({ id, label, percentage }) => (
+          <StatisticsLi key={id} label={label} info={percentage + '%'} />
+        ))}
       </StatList>
     </StatisticsSection>
   );
 };
 Statistics.propTypes = {
-  data: PropTypes.arrayOf(
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
     })
-  ).isRequired,
+  ),
 };
+

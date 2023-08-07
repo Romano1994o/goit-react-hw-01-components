@@ -7,6 +7,7 @@ export const ProfileContainer = styled.div`
   height: 350px;
   display: flex;
   flex-direction: column;
+  border-radius:5px;
   box-shadow: 0px 2px 15px #ccc;
   background-color: #fff;
 `;
